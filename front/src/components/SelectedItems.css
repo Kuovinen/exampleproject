@@ -1,0 +1,26 @@
+#selectionsection {
+  position: fixed;
+  height: 7rem;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+#selectionbox {
+  height: 100%;
+  width: var(--basewidth);
+  background-color: white;
+  border-radius: 0.5rem;
+  outline: 1rem solid var(--background-color);
+  box-sizing: border-box;
+  position: relative;
+}
+#selectionbox-bar {
+  height: 1rem;
+  display: block;
+  background-color: var(--background-color);
+  width: var(--bordwidth);
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+}

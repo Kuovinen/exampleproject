@@ -1,0 +1,65 @@
+#selectedDish {
+  height: 30rem;
+  border-radius: 0.5rem;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--white2);
+  border: 0.2rem solid white;
+}
+#selectedDishimg {
+  width: 100%;
+  opacity: 0.9;
+  position: relative;
+  bottom: 5rem;
+  z-index: 1;
+}
+#selectedDishtitle {
+  background: white;
+  color: var(--background-color);
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 3;
+}
+#selectedDishPrice {
+  bottom: 1rem;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  border-radius: 0.2rem;
+  flex: 0;
+  z-index: 3;
+}
+#orderSelectedDish {
+  background-color: var(--green);
+  color: white;
+  position: absolute;
+  bottom: 1rem;
+  width: 96%;
+  margin-left: 2%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  z-index: 3;
+}
+#orderSelectedDish:active {
+  transform: scale(0.98);
+}
+#selectedDishIngridients {
+  color: var(--background-color);
+  background-color: white;
+  position: absolute;
+  height: 8rem;
+  bottom: 0rem;
+  padding: 0.25rem 0;
+  opacity: 0.9;
+  font-weight: bold;
+  z-index: 3;
+}

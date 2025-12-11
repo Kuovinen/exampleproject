@@ -1,0 +1,22 @@
+main {
+  max-width: 1280px;
+  width: var(--basewidth);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+}
+#coverbox {
+  width: var(--basewidth);
+  margin: 0 auto;
+  height: 5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+#coverimg {
+  width: 100%;
+  position: relative;
+  top: -25rem;
+  opacity: 0.8;
+}

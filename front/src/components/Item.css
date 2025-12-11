@@ -1,0 +1,52 @@
+.item {
+  all: unset;
+  width: 15rem;
+  height: 5rem;
+  border-radius: 0.25rem;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  position: relative;
+  transition: 0.5s;
+  border: none;
+}
+.item:hover {
+  transform: scale(1.05);
+}
+.item:hover img {
+  opacity: 1;
+}
+.item:active {
+  transform: scale(0.95);
+}
+.itemtitle {
+  width: 15rem;
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  color: var(--background-color);
+  font-weight: bold;
+  z-index: 2;
+}
+.itemprice {
+  color: var(--background-color);
+  text-align: end;
+  padding-left: 1rem;
+  font-weight: bold;
+  background-color: white;
+  padding: 0rem 0.4rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+}
+.itemimg {
+  height: 5rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.2rem;
+}
+.itemimg img {
+  transition: 0.5s;
+  width: 100%;
+  opacity: 0.5;
+}

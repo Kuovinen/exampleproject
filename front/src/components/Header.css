@@ -1,0 +1,58 @@
+header {
+  top: 0;
+  height: 4rem;
+  background-color: var(--green);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+#headerspace {
+  height: 100%;
+  width: var(--basewidth);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  height: 90%;
+  filter: brightness(0) saturate(100%) invert(38%) sepia(76%) saturate(496%)
+    hue-rotate(92deg) brightness(91%) contrast(89%);
+}
+#logobox {
+  height: 3rem;
+  width: 4rem;
+  background-color: rgb(255, 255, 255);
+  padding-top: 0.3rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+}
+#brand {
+  font-family: "Limelight", sans-serif;
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+#brand .title {
+  font-size: 4rem;
+  margin-left: 1rem;
+  color: rgb(255, 255, 255);
+  position: relative;
+  top: 0.2rem;
+}
+#hdrorder {
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+  height: 3rem;
+  width: fit-content;
+  padding: 0rem 1rem;
+  color: var(--green);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+#hdrorder:active {
+  transform: scale(0.95);
+}
