@@ -9,7 +9,7 @@ function Header() {
           </div>
           <div className="title">Fork & Folly</div>
         </div>
-        {/*<button id="hdrorder">Order</button>*/}
+        <button id="hdrorder">All OrderS</button>
       </div>
     </>
   );

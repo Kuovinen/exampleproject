@@ -1,11 +1,13 @@
 import "./Item.css";
+import type { Dish } from "./Selection";
 
 interface itemProps {
-  title: string;
-  cover: string;
+  data: Dish;
+  setSelected: React.Dispatch<React.SetStateAction<Dish>>;
 }
 
 function Item(props: itemProps) {
+  const { strMeal, strMealThumb } = props.data;
   function textToNumber(value: string): number {
     return value.toUpperCase().charCodeAt(0);
   }
@@ -15,12 +17,17 @@ function Item(props: itemProps) {
 
   return (
     <>
-      <button className="item">
-        <div className="itemtitle">{props.title}</div>
+      <button
+        className="item"
+        onClick={() => {
+          props.setSelected(props.data);
+        }}
+      >
+        <div className="itemtitle">{strMeal}</div>
         <div className="itemimg">
-          <img src={props.cover} alt="" />
+          <img src={strMealThumb} alt="" />
         </div>
-        <div className="itemprice">{makePrice(props.title)}</div>
+        <div className="itemprice">{makePrice(strMeal)}</div>
       </button>
     </>
   );

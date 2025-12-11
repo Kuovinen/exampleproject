@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./App.css";
+import React from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -7,8 +7,22 @@ import Selection from "./components/Selection";
 import CoverImg from "./components/CoverImg";
 import SelectedItems from "./components/SelectedItems";
 
+export interface Dish {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+  uuid?: string;
+  strIngredient1?: string;
+  strIngredient2?: string;
+  strIngredient3?: string;
+  strIngredient4?: string;
+  strIngredient5?: string;
+  strIngredient6?: string;
+  strIngredient7?: string;
+}
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [pickedDishes, setPickedDishes] = React.useState<Dish[]>([]);
 
   return (
     <>
@@ -16,10 +30,12 @@ function App() {
         <Header />
       </header>
       <CoverImg />
-
       <main>
-        <Selection />
-        <SelectedItems />
+        <Selection setPickedDishes={setPickedDishes} />
+        <SelectedItems
+          pickedDishes={pickedDishes}
+          setPickedDishes={setPickedDishes}
+        />
       </main>
       <footer>
         <Footer />

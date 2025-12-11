@@ -12,6 +12,7 @@ main {
   height: 5rem;
   overflow: hidden;
   border-radius: 0.5rem;
+  margin-top: 5rem;
   margin-bottom: 1rem;
 }
 #coverimg {

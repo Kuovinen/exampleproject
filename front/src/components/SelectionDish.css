@@ -1,11 +1,24 @@
+section {
+  margin: 0;
+  padding: 0;
+}
 #selectedDish {
   height: 30rem;
   border-radius: 0.5rem;
   flex: 1;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  width: 19.5rem;
   background-color: var(--white2);
   border: 0.2rem solid white;
+  box-sizing: border-box;
+}
+#rails {
+  border-radius: 0.5rem;
+  flex: 1;
+  width: 20rem;
+  position: relative;
+  left: -0.25rem;
 }
 #selectedDishimg {
   width: 100%;
@@ -25,8 +38,7 @@
 #selectedDishPrice {
   bottom: 1rem;
   width: 100%;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.25rem;
   padding: 0 0.5rem;
   border-radius: 0.2rem;
   flex: 0;
@@ -39,8 +51,7 @@
   bottom: 1rem;
   width: 96%;
   margin-left: 2%;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.25rem;
   padding: 0.5rem 0;
   border: none;
   border-radius: 0.25rem;
@@ -56,10 +67,10 @@
   color: var(--background-color);
   background-color: white;
   position: absolute;
-  height: 8rem;
+  height: 10rem;
   bottom: 0rem;
-  padding: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
   opacity: 0.9;
-  font-weight: bold;
+  font-weight: 600;
   z-index: 3;
 }

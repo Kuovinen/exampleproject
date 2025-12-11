@@ -3,7 +3,6 @@
   height: 7rem;
   bottom: 2rem;
   display: flex;
-  justify-content: center;
   z-index: 2;
 }
 #selectionbox {
@@ -14,6 +13,8 @@
   outline: 1rem solid var(--background-color);
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  padding: 0.5rem;
 }
 #selectionbox-bar {
   height: 1rem;
@@ -23,4 +24,67 @@
   position: absolute;
   top: -1rem;
   left: -1rem;
+}
+#selectionbox-total {
+  top: -4rem;
+  right: 0rem;
+  position: absolute;
+  background: var(--green);
+  border: none;
+  border-radius: 0.5rem;
+  height: 3rem;
+  width: 19.5rem;
+  padding: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#selectionbox-total:active {
+  transform: scale(0.95);
+}
+#selectedcontent {
+  flex: 1;
+  bottom: -3rem;
+  border-bottom: 0.1rem solid lightgrey;
+  border-top: 0.1rem solid lightgrey;
+  height: 6rem;
+  margin: 0 0.5rem;
+  color: black;
+  overflow: hidden;
+  display: flex;
+}
+#selectedcontent > #scontainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+#arrowL,
+#arrowR {
+  flex: 0;
+  /*margin: 0 2rem;*/
+  background: var(--green);
+  border: none;
+  border-radius: 0.25rem;
+  height: 6rem;
+  width: 3rem;
+  position: relative;
+  padding: 0;
+}
+
+#arrowL:active,
+#arrowR:active {
+  transform: scale(0.95);
+}
+#arrowR img,
+#arrowL img {
+  height: 50%;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+    hue-rotate(98deg) brightness(103%) contrast(101%);
+}
+#arrowR img {
+  transform: rotate(180deg);
 }

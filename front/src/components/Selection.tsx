@@ -2,23 +2,22 @@ import React from "react";
 import "./Selection.css";
 import Item from "./Item";
 import SelectionDish from "./SelectionDish";
+import type { Dish } from "../App";
 
-interface Dish {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strIngredient1?: string;
-  strIngredient2?: string;
-  strIngredient3?: string;
-  strIngredient4?: string;
-  strIngredient5?: string;
-  strIngredient6?: string;
-  strIngredient7?: string;
+const fakeDish = {
+  idMeal: "",
+  strMeal: "",
+  strMealThumb: "",
+};
+
+interface selectionProps {
+  setPickedDishes: React.Dispatch<React.SetStateAction<Dish[]>>;
 }
 
-function Selection() {
+function Selection(props: selectionProps) {
   const [dishes, setDishes] = React.useState<Dish[]>([]);
-  const [selected, setSelected] = React.useState<Dish>({});
+  const [selected, setSelected] = React.useState<Dish>(fakeDish);
+
   React.useEffect(() => {
     async function getMeals() {
       const data = await fetch(
@@ -28,6 +27,7 @@ function Selection() {
       setDishes(values.meals);
       setSelected(values.meals[0]);
     }
+
     getMeals();
   }, []);
 
@@ -36,15 +36,15 @@ function Selection() {
       <section id="controls">
         <div id="dishesicons">
           {dishes.map((item) => (
-            <Item
-              key={item.idMeal}
-              title={item.strMeal}
-              cover={item.strMealThumb}
-            />
+            <Item key={item.idMeal} data={item} setSelected={setSelected} />
           ))}
         </div>
         {dishes.length && (
-          <SelectionDish key={selected.idMeal} data={selected} />
+          <SelectionDish
+            key={selected.idMeal}
+            data={selected}
+            setPickedDishes={props.setPickedDishes}
+          />
         )}
       </section>
     </>

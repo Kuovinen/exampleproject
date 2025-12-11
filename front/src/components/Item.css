@@ -38,6 +38,7 @@
   position: absolute;
   right: 0.6rem;
   bottom: 0.6rem;
+  z-index: 2;
 }
 .itemimg {
   height: 5rem;
