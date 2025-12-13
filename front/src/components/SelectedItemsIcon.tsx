@@ -14,10 +14,14 @@ function SelectedItemsIcon(props: SelectedItemsIconProps) {
   }
   return (
     <>
-      <div className="dishicon" onClick={() => removeThisItem()}>
+      <div
+        data-test="dishicon"
+        className="dishicon"
+        onClick={() => removeThisItem()}
+      >
         <p>
-          <p className="iconName">{props.data.strMeal}</p>
-          <p className="poista">REMOVE ?</p>
+          <div className="iconName">{props.data.strMeal}</div>
+          <div className="poista">REMOVE ?</div>
         </p>
         <img src={props.data.strMealThumb} alt="" />
       </div>

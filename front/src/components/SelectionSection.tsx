@@ -1,5 +1,5 @@
 import React from "react";
-import "./Selection.css";
+import "./SelectionSection.css";
 import Item from "./Item";
 import SelectionDish from "./SelectionDish";
 import type { Dish } from "../App";
@@ -21,7 +21,8 @@ function Selection(props: selectionProps) {
   React.useEffect(() => {
     async function getMeals() {
       const data = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
+        "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
+        { method: "GET" }
       );
       const values = await data.json();
       setDishes(values.meals);

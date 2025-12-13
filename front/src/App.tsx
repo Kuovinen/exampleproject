@@ -3,7 +3,7 @@ import React from "react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Selection from "./components/Selection";
+import SelectionSection from "./components/SelectionSection";
 import CoverImg from "./components/CoverImg";
 import SelectedItems from "./components/SelectedItems";
 
@@ -11,7 +11,6 @@ export interface Dish {
   idMeal: string;
   strMeal: string;
   strMealThumb: string;
-  uuid?: string;
   strIngredient1?: string;
   strIngredient2?: string;
   strIngredient3?: string;
@@ -31,7 +30,7 @@ function App() {
       </header>
       <CoverImg />
       <main>
-        <Selection setPickedDishes={setPickedDishes} />
+        <SelectionSection setPickedDishes={setPickedDishes} />
         <SelectedItems
           pickedDishes={pickedDishes}
           setPickedDishes={setPickedDishes}

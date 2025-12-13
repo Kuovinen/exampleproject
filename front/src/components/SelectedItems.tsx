@@ -55,7 +55,11 @@ function SelectedItems(props: SelectedItemsProps) {
       <section id="selectionsection">
         <div id="selectionbox">
           <button id="selectionbox-total">
-            <span>Order: {calculateTotal().toFixed(2)} €</span>
+            <span>
+              Order:{" "}
+              <span data-test="orderPrice">{calculateTotal().toFixed(2)}</span>{" "}
+              €
+            </span>
           </button>
 
           <div id="selectionbox-bar"></div>
@@ -70,7 +74,7 @@ function SelectedItems(props: SelectedItemsProps) {
           </button>
 
           <div id="selectedcontent">
-            <div ref={container} id="scontainer">
+            <div data-test="selectedcontent" ref={container} id="scontainer">
               {makeIcons(props.pickedDishes)}
             </div>
           </div>

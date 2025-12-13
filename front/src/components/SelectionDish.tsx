@@ -23,36 +23,40 @@ function Item(props: itemProps) {
     <>
       <section id="rails">
         <div id="cart">
-          <div id="selectedDish">
-            <div id="selectedDishtitle">{props.data.strMeal}</div>
-            <div id="selectedDishimg">
-              <img src={props.data.strMealThumb} alt="" />
-            </div>
-            <div id="selectedDishIngridients">
-              {[
-                props.data.strIngredient1,
-                props.data.strIngredient2,
-                props.data.strIngredient3,
-                props.data.strIngredient4,
-                props.data.strIngredient5,
-                props.data.strIngredient6,
-                props.data.strIngredient7,
-              ]
-                .filter((el) => el != undefined && el != "" && el != null)
-                .join(", ")}
-            </div>
+          <div id="selectedDishContainer">
+            <div className="content">
+              <div data-test="selectedDishtitle" id="selectedDishtitle">
+                {props.data.strMeal}
+              </div>
+              <div id="selectedDishimg">
+                <img src={props.data.strMealThumb} alt="" />
+              </div>
+              <div id="selectedDishIngridients">
+                {[
+                  props.data.strIngredient1,
+                  props.data.strIngredient2,
+                  props.data.strIngredient3,
+                  props.data.strIngredient4,
+                  props.data.strIngredient5,
+                  props.data.strIngredient6,
+                  props.data.strIngredient7,
+                ]
+                  .filter((el) => el != undefined && el != "" && el != null)
+                  .join(", ")}
+              </div>
 
-            <button
-              id="orderSelectedDish"
-              onClick={() => {
-                addToList();
-              }}
-            >
-              <span>Add</span>
-              <span id="selectedDishPrice">
-                {makePrice(props.data.strMeal)}
-              </span>
-            </button>
+              <button
+                id="orderSelectedDish"
+                onClick={() => {
+                  addToList();
+                }}
+              >
+                <span>Add</span>
+                <span data-test="selectedDishPrice" id="selectedDishPrice">
+                  {makePrice(props.data.strMeal)}
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

@@ -2,17 +2,6 @@ section {
   margin: 0;
   padding: 0;
 }
-#selectedDish {
-  height: 30rem;
-  border-radius: 0.5rem;
-  flex: 1;
-  overflow: hidden;
-  position: fixed;
-  width: 19.5rem;
-  background-color: var(--white2);
-  border: 0.2rem solid white;
-  box-sizing: border-box;
-}
 #rails {
   border-radius: 0.5rem;
   flex: 1;
@@ -20,6 +9,26 @@ section {
   position: relative;
   left: -0.25rem;
 }
+#cart {
+  position: fixed;
+}
+#selectedDishContainer {
+  height: 30rem;
+  border-radius: 0.5rem;
+  flex: 1;
+  overflow: hidden;
+
+  width: 19.5rem;
+  background-color: var(--white2);
+  border: 0.2rem solid white;
+  box-sizing: border-box;
+  top: 0;
+}
+#selectedDishContainer > .content {
+  position: relative;
+  height: 100%;
+}
+
 #selectedDishimg {
   width: 100%;
   opacity: 0.9;
