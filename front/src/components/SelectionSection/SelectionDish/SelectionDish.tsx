@@ -1,5 +1,5 @@
 import "./SelectionDish.css";
-import type { Dish } from "../App";
+import type { Dish } from "../../../App";
 
 interface itemProps {
   data: Dish;

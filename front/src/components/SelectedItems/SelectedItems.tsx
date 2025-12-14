@@ -1,24 +1,25 @@
 import "./SelectedItems.css";
 import React from "react";
-import arrow from "../assets/arrow.svg";
-import Icon from "./SelectedItemsIcon";
-import type { Dish } from "../App";
+import arrow from "../../assets/arrow.svg";
+import Icon from "./SelectedItemsIcon/SelectedItemsIcon";
+import type { Dish } from "../../App";
 
 interface SelectedItemsProps {
   pickedDishes: Dish[];
   setPickedDishes: React.Dispatch<React.SetStateAction<Dish[]>>;
+  getData: () => Promise<void>;
 }
 
 function SelectedItems(props: SelectedItemsProps) {
   const displacementAmount = React.useRef<number>(0);
   const container = React.useRef<HTMLDivElement>(null);
-
+  //bottom row selected food items for ordering:
   function makeIcons(array: Dish[]) {
     return array.map((el: Dish) => (
       <Icon key={el.idMeal} data={el} setPickedDishes={props.setPickedDishes} />
     ));
   }
-
+  //total price
   function calculateTotal(): number {
     return props.pickedDishes.reduce((acc, cur) => {
       return (
@@ -28,7 +29,7 @@ function SelectedItems(props: SelectedItemsProps) {
       );
     }, 0);
   }
-
+  //see icons hiddedn from view:
   function moveLeft() {
     //if not viewing the last item, allow movement left
     if (container.current) {
@@ -49,12 +50,30 @@ function SelectedItems(props: SelectedItemsProps) {
       container.current.style.left = displacementAmount.current + "rem";
     }
   }
+  async function pushData(data: Dish[]) {
+    const res = await fetch("http://localhost:3000/data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      //DATA
+      body: JSON.stringify({
+        payload: data,
+      }),
+    });
+    const response = await res.json();
+    console.log("Response from server:", response);
+    props.getData();
+  }
 
   return (
     <>
       <section id="selectionsection">
         <div id="selectionbox">
-          <button id="selectionbox-total">
+          <button
+            id="selectionbox-total"
+            onClick={() => {
+              pushData(props.pickedDishes);
+            }}
+          >
             <span>
               Order:{" "}
               <span data-test="orderPrice">{calculateTotal().toFixed(2)}</span>{" "}

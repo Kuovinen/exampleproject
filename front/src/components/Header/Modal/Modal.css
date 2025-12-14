@@ -1,0 +1,55 @@
+#modalBackground {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0rem;
+  left: 0rem;
+  z-index: 10;
+}
+#modal {
+  height: fit-content;
+  width: 40%;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 3rem auto;
+  border-radius: 0.5rem;
+  position: relative;
+  color: black;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+#modal h4 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: relative;
+  margin: 0;
+}
+#modal > button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+#modal > ul {
+  width: 90%;
+  position: relative;
+  top: 1rem;
+  padding: 0;
+  margin: auto;
+}
+#modal > ul > li {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.2rem;
+  padding: 0.3rem 1rem;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  text-align: left;
+}
+#modal ul li > button {
+  position: absolute;
+  right: 0.5rem;
+}

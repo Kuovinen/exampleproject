@@ -1,8 +1,8 @@
 import React from "react";
 import "./SelectionSection.css";
-import Item from "./Item";
-import SelectionDish from "./SelectionDish";
-import type { Dish } from "../App";
+import Item from "./Item/Item";
+import SelectionDish from "./SelectionDish/SelectionDish";
+import type { Dish } from "../../App";
 
 const fakeDish = {
   idMeal: "",

@@ -1,11 +1,10 @@
 import "./App.css";
 import React from "react";
-
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
-import SelectionSection from "./components/SelectionSection";
+import SelectionSection from "./components/SelectionSection/SelectionSection";
 import CoverImg from "./components/CoverImg";
-import SelectedItems from "./components/SelectedItems";
+import SelectedItems from "./components/SelectedItems/SelectedItems";
 
 export interface Dish {
   idMeal: string;
@@ -23,10 +22,23 @@ export interface Dish {
 function App() {
   const [pickedDishes, setPickedDishes] = React.useState<Dish[]>([]);
 
+  const [serverData, setServerData] = React.useState([
+    { _id: "", payload: [] },
+  ]);
+  async function getData() {
+    const res = await fetch("http://localhost:3000/data", { method: "GET" });
+    const data = await res.json();
+    console.log(data);
+    setServerData(() => data);
+  }
+  React.useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <header>
-        <Header />
+        <Header serverData={serverData} getData={getData} />
       </header>
       <CoverImg />
       <main>
@@ -34,6 +46,7 @@ function App() {
         <SelectedItems
           pickedDishes={pickedDishes}
           setPickedDishes={setPickedDishes}
+          getData={getData}
         />
       </main>
       <footer>

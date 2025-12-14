@@ -1,5 +1,5 @@
 import "./SelectedItemsIcon.css";
-import type { Dish } from "../App";
+import type { Dish } from "../../../App";
 
 interface SelectedItemsIconProps {
   data: Dish;
@@ -19,10 +19,10 @@ function SelectedItemsIcon(props: SelectedItemsIconProps) {
         className="dishicon"
         onClick={() => removeThisItem()}
       >
-        <p>
+        <div>
           <div className="iconName">{props.data.strMeal}</div>
           <div className="poista">REMOVE ?</div>
-        </p>
+        </div>
         <img src={props.data.strMealThumb} alt="" />
       </div>
     </>
