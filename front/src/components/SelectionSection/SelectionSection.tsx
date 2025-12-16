@@ -18,17 +18,17 @@ function Selection(props: selectionProps) {
   const [dishes, setDishes] = React.useState<Dish[]>([]);
   const [selected, setSelected] = React.useState<Dish>(fakeDish);
 
-  React.useEffect(() => {
-    async function getMeals() {
-      const data = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
-        { method: "GET" }
-      );
-      const values = await data.json();
-      setDishes(values.meals);
-      setSelected(values.meals[0]);
-    }
+  async function getMeals() {
+    const data = await fetch(
+      "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
+      { method: "GET" }
+    );
+    const values = await data.json();
+    setDishes(values.meals);
+    setSelected(values.meals[0]);
+  }
 
+  React.useEffect(() => {
     getMeals();
   }, []);
 

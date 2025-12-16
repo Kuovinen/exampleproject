@@ -1,5 +1,5 @@
 import "./Item.css";
-import type { Dish } from "../App";
+import type { Dish } from "../../../App";
 
 interface itemProps {
   data: Dish;
@@ -8,6 +8,7 @@ interface itemProps {
 
 function Item(props: itemProps) {
   const { strMeal, strMealThumb } = props.data;
+  //create fake price data
   function textToNumber(value: string): number {
     return value.toUpperCase().charCodeAt(0);
   }

@@ -1,0 +1,17 @@
+ESIMERKIT:
+reduce()
+SelectedItems.tsx
+
+filter()
+SelectionSection > SelectionDish
+
+
+map()
+SelectionSection.tsx
+
+
+short circuit operator
+
+
+ternary operator
+SelectedItems.tsx > moveLeft()

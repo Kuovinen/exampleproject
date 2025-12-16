@@ -20,12 +20,14 @@
 }
 .itemtitle {
   width: 15rem;
+  height: 1.8rem;
   background-color: white;
   opacity: 0.9;
   position: absolute;
   color: var(--background-color);
   font-weight: bold;
   z-index: 2;
+  overflow: hidden;
 }
 .itemprice {
   color: var(--background-color);

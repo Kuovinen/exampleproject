@@ -10,6 +10,7 @@ interface ModalProps {
 
 function Modal(props: ModalProps) {
   async function sendDeleteReq(id: string) {
+    //delete specific item from order
     const responce = await fetch(`http://localhost:3000/data/${id}`, {
       method: "DELETE",
     });

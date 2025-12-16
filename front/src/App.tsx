@@ -20,17 +20,18 @@ export interface Dish {
 }
 
 function App() {
-  const [pickedDishes, setPickedDishes] = React.useState<Dish[]>([]);
-
+  const [pickedDishes, setPickedDishes] = React.useState<Dish[]>([]); //order
   const [serverData, setServerData] = React.useState([
     { _id: "", payload: [] },
-  ]);
+  ]); //needed here for getData() below
+
   async function getData() {
     const res = await fetch("http://localhost:3000/data", { method: "GET" });
     const data = await res.json();
     console.log(data);
     setServerData(() => data);
   }
+  //initial data request from mongodb for food orders made before
   React.useEffect(() => {
     getData();
   }, []);
